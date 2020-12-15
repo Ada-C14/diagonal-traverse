@@ -19,7 +19,7 @@
 # decrement row and increment col until... (repeat)
 # repeat until hit row max, col max
 
-# Time: O(n)
+# Time: O(n) (where n is the total num of items in the matrix - or rows * cols)
 # >> go through every item in the matrix
 # Space: O(n)
 # >> collect every item in the matrix in a 1d output array
