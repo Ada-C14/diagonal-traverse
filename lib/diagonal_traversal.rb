@@ -12,7 +12,7 @@
 # row and col vars
 # start at (0, 0)
 # we want to go up and to the right OR down and to the left
-# if can't go up:
+# if can't go up anymore:
 # if can go right, go right else go down
 # decrement col and increment row until can't go down AND left
 # if can't go down, go right; else go down
@@ -53,7 +53,7 @@ def diagonal_traversal(matrix)
   diagonals = [matrix[row_ind][col_ind]]
 
   until row_ind == matrix.size - 1 && col_ind == matrix[0].size - 1
-    if row_ind == 0
+    if row_ind - 1 < 0 || col_ind + 1 == matrix[0].size
       if col_ind < matrix[0].size - 1
         col_ind += 1
       else
@@ -74,3 +74,12 @@ def diagonal_traversal(matrix)
 
   return diagonals
 end
+
+# test = [
+#   [1,2,3,4],
+#   [5,6,7,8],
+#   [9,10,11,12],
+#   [13,14,15,16]
+# ]
+#
+# p diagonal_traversal(test)
