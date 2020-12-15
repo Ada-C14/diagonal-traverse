@@ -22,23 +22,23 @@ def diagonal_traversal(matrix)
       c += 1
       r -= 1
     end
-    if c >= cols #reverse step and move down when hitting the right boundary
+    if c >= cols #reverse step and move down when out of right bound
       c -= 1
       r += 2
     end
-    r += 1 if r < 0 #move down if hitting top boundary
+    r += 1 if r < 0 #move down if out of top bound
 
-    while c >= 0 && r < rows #keep going down diagonally out of bounds
+    while c >= 0 && r < rows #keep going down diagonally until out of bounds
       result << matrix[r][c]
       return result if r == rows - 1 && c == cols - 1
       c -= 1
       r += 1
     end
-    if r >= rows #reverse step and move right when hitting bottom boundary
+    if r >= rows #reverse step and move right when out of bottom bound
       r -= 1
       c += 2
     end
-    c += 1 if c < 0 #move right when hitting left boundary
+    c += 1 if c < 0 #move right when out of left bound
   end
   return []
 end
