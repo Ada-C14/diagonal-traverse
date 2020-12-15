@@ -11,9 +11,11 @@
 # PSEUDOCODE:
 # row and col vars
 # start at (0, 0)
-# if hit row lowerbound, increment col
-# decrement col and increment row until
-# if hit col lowerbound, increment row
+# we want to go up and to the right OR down and to the left
+# if can't go up:
+# if can go right, go right else go down
+# decrement col and increment row until can't go down AND left
+# if can't go down, go right; else go down
 # decrement row and increment col until... (repeat)
 # repeat until hit row max, col max
 
