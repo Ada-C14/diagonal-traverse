@@ -40,6 +40,6 @@ def diagonal_traversal(matrix)
     end
     c += 1 if c < 0 #move right when out of left bound
   end
-  return []
+  return result
 end
 
