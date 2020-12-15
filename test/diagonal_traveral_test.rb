@@ -4,7 +4,6 @@ require "minitest/skip_dsl"
 
 require_relative '../lib/diagonal_traversal.rb'
 
-
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 describe "Diagonal Traversal" do
