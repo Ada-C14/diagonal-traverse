@@ -9,21 +9,6 @@
 # ]
 # Example Output:  [1, 2, 4, 7, 5, 3, 6, 8, 9]
 
-# a row 0, column 0
-# b row 0, column 1
-# e row 1, column 0
-# i row 2, column 0
-# f row 1, column 1
-# c row 0, column 2
-# d row 0, column 3
-# g row 1, column 2
-# j row 2, column 1
-# k row 2, column 2
-# h row 1, column 3
-# l row 2, column 3
-
-# as rows increase, columns decrease
-# as rows decrease, columns increase
 
 def diagonal_traversal(matrix)
   i = 0 # row
@@ -72,3 +57,45 @@ def diagonal_traversal(matrix)
 
   return diagonal_array
 end
+
+# # Leetcode solution
+# def diagonal_traversal(matrix)
+#     diagonal_array = []
+#
+#     row = 0
+#     column = 0
+#
+#     n = matrix.length
+#     m = matrix[0].length
+#
+#     going_upward = true # if traversing up-right, false if traversing down-left
+#     while row < n && column < m
+#       diagonal_array << matrix[row][column]
+#       new_row = row + (going_upward ? -1 : 1)
+#       new_column = column + (going_upward ? 1 : -1)
+#
+#       # If at the end of diagonal, check if next element is within bounds
+#       if new_row < 0 || new_column < 0 || new_row == n || new_column == m
+#         if going_upward # If at tail-end of traversing upward-right, find next head to switch to downward-left
+#           # "if [i, j + 1] is within bounds, then it becomese the next head.
+#           # Otherwise, the element directly below i.e. the element [i + 1, j] becomes the next head"
+#           row += (column == m - 1 ? 1 : 0)  # if at the last column, next element is directly below
+#           column += (column < m - 1 ? 1 : 0) # if NOT at the last column, next element is the next column
+#
+#         else # If at tail-end of traversing downward-left, find next head to switch to upward-right
+#           # "if [i + 1, j] is within bounds, then it becomes the next head.
+#           # Otherwise, the element directly below i.e. the element [i, j + 1] becomes the next head"
+#           column += (row == n - 1 ? 1 : 0) # If at the last row, the next element is the next column
+#           row += (row < n - 1 ? 1 : 0) # If NOT at the last row, the next element is directly below
+#         end
+#
+#         going_upward = !going_upward
+#
+#       else
+#         row = new_row
+#         column = new_column
+#       end
+#     end
+#
+#   return diagonal_array
+# end
