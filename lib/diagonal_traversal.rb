@@ -1,3 +1,6 @@
+# Time complexity: O(n2), it depends on the length of the row and the number of the row, so it is O(n) * O(m) --> O(n2).
+# Space complexity: O(n2), the length of the return result is the total elements in the matrix, so it is O(n) * O(m) --> O(n2).
+
 def diagonal_traversal(matrix)
   return [] if matrix.empty?
   m = matrix.length 
@@ -6,7 +9,7 @@ def diagonal_traversal(matrix)
   row = 0
   col = 0
   result = [matrix[row][col]]
-  # to pass leetcode's Time Limit Exceeded, I added this two conditions
+  # to pass leetcode's Time Limit Exceeded, I added these two conditions
   return matrix[0] if m == 1
   return result = (0...m).map {|row| matrix[row][0] } if n == 1 
   
@@ -20,8 +23,7 @@ def diagonal_traversal(matrix)
       round += 1 if col == 0 
       col -= 1 if (col-1) >= 0 
     end
-    result.push(matrix[row][col]) unless matrix[row].nil? 
+    result.push(matrix[row][col]) if !matrix[row].nil? && !matrix[row][col].nil? 
   end
-  result.delete(nil)
   return result
 end
