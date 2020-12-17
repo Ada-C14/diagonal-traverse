@@ -13,7 +13,7 @@ def diagonal_traversal(matrix)
   return matrix[0] if m == 1
   return result = (0...m).map {|row| matrix[row][0] } if n == 1 
   
-  while round < (m + n) && row >= 0 && col >= 0
+  while round < (m + n) 
     if round.even?
       col += 1
       round += 1 if row == 0
