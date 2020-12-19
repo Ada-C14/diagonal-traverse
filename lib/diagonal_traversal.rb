@@ -9,6 +9,9 @@
 # ]
 # Example Output:  [1, 2, 4, 7, 5, 3, 6, 8, 9]
 
+# Time Complexity - O(nm)
+# Space Complexity - O(nm)
+
 def diagonal_traversal(matrix)
   return [] if matrix[0].empty?
 
