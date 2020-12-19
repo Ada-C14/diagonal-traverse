@@ -21,16 +21,16 @@ def diagonal_traversal(matrix)
 
   row_length.times do |i|
     col_length.times do |j|
-      diagonal = i + j
+      index_sum = i + j
 
-      if diagonals[diagonal].nil?
-        diagonals[diagonal] = Array.new
+      if diagonals[index_sum].nil?
+        diagonals[index_sum] = Array.new # initialize diagonal array if new
       end
 
-      if diagonal.even?
-        diagonals[diagonal].unshift(matrix[i][j])
+      if index_sum.even?
+        diagonals[index_sum].unshift(matrix[i][j]) # even-indexed diagonals should be reversed
       else
-        diagonals[diagonal] << matrix[i][j]
+        diagonals[index_sum] << matrix[i][j]
       end
     end
   end
