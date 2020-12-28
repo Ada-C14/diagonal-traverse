@@ -53,4 +53,20 @@ describe "Diagonal Traversal" do
     # Assert
     expect(answer).must_equal ["a", "b", "e", "i", "f", "c", "d", "g", "j", "k", "h", "l"]
   end
+
+  it "will return ['a', 'b', 'e', 'i', 'f', 'c', 'd', 'g', 'j', 'k', 'h', l'] for the README input" do
+    # Arrange
+    input = [
+      ["a", "b", "c"],
+      ["d", "e", "f"],
+      ["g", "h", "i"],
+      ["j", "k", "l"],
+    ]
+
+    # Act
+    answer = diagonal_traversal(input)
+
+    # Assert
+    expect(answer).must_equal ["a", "b", "d", "g", "e", "c", "f", "h", "j", "k", "i", "l"]
+  end
 end
