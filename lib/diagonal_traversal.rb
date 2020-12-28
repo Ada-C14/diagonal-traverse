@@ -18,10 +18,10 @@ def diagonal_traversal(matrix)
   row = 0
   column = 0
   upward = true  #variable will indicate the direction; moving up if true, moving down if false
-  diagonal_transversal = []
+  diagonal_traversal = []
 
   while row < n and column < m
-    diagonal_transversal << matrix[row][column]
+    diagonal_traversal << matrix[row][column]
 
     #[a, b] -> [a - 1, b + 1] if going down // [a, b] -> [a + 1 , b - 1] if going up
     next_row = row + (upward ? -1 : 1)
@@ -51,5 +51,5 @@ def diagonal_traversal(matrix)
     end
   end
 
-  return diagonal_transversal
+  return diagonal_traversal
 end
